@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="IT">
+<title>Gestione stringhe-form</title>
+<script>
+function VerificaForm() {
+    //Permetto all'utente la registrazione solo se la lunghezza inserita della partita IVA ha 11 caratteri, la provincia almeno 2 ed il cap 5
+    partitaIVAstring=document.Registrazione.partitaIVA.value;
+    if (partitaIVAstring=="") {
+        alert("Bisogna inserire una partita IVA");
+        return;
+    }
+    partitaIVAstringLunghezza=partitaIVAstring.length;
+    if (partitaIVAstringLunghezza!=11) { //!= significa diverso
+        alert("Errore: la lunghezza della partita IVA deve essere esattamente di 11 caratteri");
+        return;
+    }
+
+
+
+
+    provincia=document.Registrazione.provincia.value;
+    if (provincia=="") {
+        alert("Bisogna inserire una provincia");
+        return;
+    }
+    provinciastringLunghezza=provincia.length;
+    if (provinciastringLunghezza<2) { //!= significa diverso
+        alert("Errore: la lunghezza della provincia deve essere di almeno 2 caratteri");
+        return;
+    }
+
+
+
+
+    CAP=document.Registrazione.CAP.value;
+    if (CAP=="") {
+        alert("Bisogna inserire un CAP");
+        return;
+    }
+    CAPstringLunghezza=partivaIVAstring.length;
+    if (CAPstringLunghezza!=5) { //!= significa diverso
+        alert("Errore: la lunghezza del CAP deve essere esattamente di 5 caratteri");
+        return;
+    }   
+}
+</script>
+<body>
+    <form name="Registrazione">
+        <input type="text" id="partitaIVA" placeholder="Inserisci la partita IVA">
+        <input type="text" id="provincia" placeholder="Inserisci la provincia">
+        <input type="text" id="CAP" placeholder="Inserisci il CAP">
+        <input type="button" id="Registrati" value="Registrati" onclick="VerificaForm()"> 
+    </form>
+</body>
+</html> 
